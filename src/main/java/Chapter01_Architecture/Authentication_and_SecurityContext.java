@@ -3,23 +3,26 @@ package Chapter01_Architecture;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
 
 import static util.Utils.assume;
 
 /**
- *
- * <img src="doc-files/Authentication_SecurityContext.png" width="500" height="500" />
- *
- *<p/>
- *
- * <h3>Authentication</h3>
+ * <h2>Authentication</h2>
+ * Before authentication, it is the token for an authentication request.
+ * After the request has been processed by the
+ * {@link AuthenticationManager#authenticate(Authentication)},
+ * it is an authenticated principal.
  * <p>
- * <code>Authentication</code> contains user's information such as username/password
- * for authentication or authorities for authorization:<ul>
- *   <li>before authentication, it is the token for an authentication request</li>
- *   <li>after authentication, it is an authenticated principal, once the request has been processed by the
- *         {@link AuthenticationManager#authenticate(Authentication)}</li></ul>
+ * <h2>SecurityContext</h2>
+ * Interface defining the minimum security information associated with the current thread
+ * of execution.
+ * <p>
+ * <h2>SecurityContextHolder</h2>
+ * Associates a given {@link SecurityContext} with the current execution thread.
+ * <p>
+ * <img src="doc-files/Authentication_SecurityContext.png" width="700" height="550" />
  *
  */
 public class Authentication_and_SecurityContext {

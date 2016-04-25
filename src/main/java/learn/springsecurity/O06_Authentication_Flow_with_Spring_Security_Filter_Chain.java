@@ -33,7 +33,7 @@ import org.springframework.context.support.*;
  *     <li>ExceptionTranslationFilter</li>
  *     <li>FilterSecurityInterceptor</li>
  * </ol>
- * to name a few. Please refer to http://docs.spring.io/autorepo/docs/spring-security/current/reference/htmlsingle/#security-filter-chain
+ * Please refer to http://docs.spring.io/autorepo/docs/spring-security/current/reference/htmlsingle/#security-filter-chain
  * for detailed information.
  * <p>
  * The order of the filters is carefully designed so that Spring Security can orchestrate the filters to
@@ -46,25 +46,33 @@ import org.springframework.context.support.*;
  *     <li>session management</li>
  *     <li>logout</li>
  * </ul>
+ * to name a few.
  * <p>
  * If the default filters somehow cannot meet your requirement, it is also possible to hook
  * customized filters into Security Filter Chain. The order of filters always matters, so
  * it is crucial to place your customized filter in the right position. Please reference
  * http://docs.spring.io/autorepo/docs/spring-security/current/reference/htmlsingle/#ns-custom-filters
- * for positioning your own filter.
+ * for the hint of filer positioning.
+ * <p>
+ * As far as request token collecting and authentication triggering is concerned, here is the interactions
+ * among client (browser), Security Chain, and Authentication Manager:
+ * <ol>
+ *     <li>client attempts to access protected resource "/admin/user"</li>
+ *     <li></li>
+ * </ol>
+ * <p><p>
+ * This section gives an example of complete authentication flow on a web application that
+ * takes advantage of Security Filter Chain.
  * <p>
  * First we bootstrap a web application on Jetty in jetty.xml which reads resources/web/web.xml
  * as web descriptor.
- * <p>
- * This section gives an example of complete authentication flow on a web application that
- * takes advantage of Security Filter Chain.
+ *
  */
 public class O06_Authentication_Flow_with_Spring_Security_Filter_Chain {
 
     public static void main(String[] args) {
 
         ApplicationContext ac = new ClassPathXmlApplicationContext("classpath:spring/jetty.xml");
-
 
     }
 

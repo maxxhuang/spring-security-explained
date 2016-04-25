@@ -10,6 +10,9 @@
                            http://www.springframework.org/schema/mvc
                            http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
+    <!-- import your spring security config file here -->
+    <import resource="auth-with-spring-security-filters.xml" />
+
     <context:component-scan base-package="learn.springsecurity" />
 
     <mvc:annotation-driven />

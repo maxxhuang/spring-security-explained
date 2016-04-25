@@ -49,10 +49,13 @@ public class O05_Missing_Parts_of_Authentication_Flow {
         }
 
         public void doAuth() {
+            // collect request token
             Authentication token = gatherRequestToken();
 
+            // trigger authentication
             Authentication authenticated = authenticate(token);
 
+            // place Authentication in SecurityContext
             SecurityContextHolder.getContext().setAuthentication(authenticated);
         }
 

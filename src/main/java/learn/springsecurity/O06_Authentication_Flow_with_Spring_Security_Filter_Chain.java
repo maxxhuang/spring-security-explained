@@ -2,6 +2,17 @@ package learn.springsecurity;
 
 import org.springframework.context.*;
 import org.springframework.context.support.*;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.AuthenticationException;
+import org.springframework.security.web.AuthenticationEntryPoint;
+import org.springframework.security.web.access.ExceptionTranslationFilter;
+import org.springframework.security.web.access.intercept.FilterSecurityInterceptor;
+import org.springframework.security.web.authentication.www.BasicAuthenticationEntryPoint;
+import org.springframework.security.web.authentication.www.BasicAuthenticationFilter;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 /**
  * For web applications running on Java EE servers, Spring Security provides a filter-based
@@ -58,13 +69,32 @@ import org.springframework.context.support.*;
  * among client (browser), Security Chain, and Authentication Manager:
  * <ol>
  *     <li>client attempts to access protected resource "/admin/user"</li>
- *     <li></li>
+ *     <li>
+ *         {@link FilterSecurityInterceptor} detects client has no permission to access this resource
+ *         and throws an exception.
+ *         it triggers {@link AuthenticationEntryPoint} which sends back a 401 (UNAUTHORIZED) status code to client.
+ *     </li>
+ *     <li>
+ *         {@link ExceptionTranslationFilter} sees an exception raised and launches authentication
+ *         procedure via configured {@link BasicAuthenticationEntryPoint} which sends back a 401 (UNAUTHORIZED) status code to client.
+ *     </li>
+ *     <li>
+ *         On receiving 401 response, client inputs username/password and makes another request with username/password
+ *         embedded the information in "Authorization" header.
+ *     </li>
+ *     <li>
+ *         {@link BasicAuthenticationFilter} intercepts this request, extracts username / password from
+ *         request header (Authorization) and invoke {@link AuthenticationManager#authenticate(Authentication)}.
+ *         BasicAuthenticationFilter places authentication Authentication in SecurityContext by calling
+ *         <code>SecurityContextHolder.getContext().setAuthentication(authResult)</code>
+ *     </li>
+ *
  * </ol>
  * <p><p>
  * This section gives an example of complete authentication flow on a web application that
  * takes advantage of Security Filter Chain.
  * <p>
- * First we bootstrap a web application on Jetty in jetty.xml which reads resources/web/web.xml
+ * We bootstrap a web application on embedded Jetty server which reads resources/web/web.xml
  * as web descriptor.
  *
  */

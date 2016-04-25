@@ -20,6 +20,7 @@
 
     </security:http>
 
+    <bean id="helloController" class="learn.springsecurity.controller.HelloController" />
     <bean id="adminController" class="learn.springsecurity.controller.AdminController" />
 
 </beans>

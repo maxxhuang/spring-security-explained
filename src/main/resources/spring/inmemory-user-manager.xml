@@ -10,7 +10,7 @@
     <security:authentication-manager id="authenticationManager">
         <security:authentication-provider>
             <security:user-service>
-                <security:user name="max" password="rocks" authorities="ROLE_ADMIN" />
+                <security:user name="max" password="rocks" authorities="ROLE_ADMIN, ROLE_USER" />
                 <security:user name="eddie" password="passby" authorities="ROLE_USER" />
             </security:user-service>
         </security:authentication-provider>

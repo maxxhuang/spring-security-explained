@@ -1,4 +1,4 @@
-package learn.springsecurity;
+package learn.springsecurity.authentication;
 
 import org.springframework.security.authentication.AbstractAuthenticationToken;
 import org.springframework.security.authentication.AuthenticationManager;

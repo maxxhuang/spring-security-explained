@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:security="http://www.springframework.org/schema/security"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+    http://www.springframework.org/schema/security
+    http://www.springframework.org/schema/security/spring-security-4.0.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <import resource="inmemory-user-manager.xml" />
+
+    <context:annotation-config />
+
+    <security:http use-expressions="false">
+
+        <security:intercept-url pattern="/admin/**" access="ROLE_ADMIN" />
+        <security:intercept-url pattern="/user/**" access="ROLE_USER" />
+
+        <security:http-basic />
+
+    </security:http>
+
+
+    <security:global-method-security authentication-manager-ref="authenticationManager"
+                                     secured-annotations="enabled"/>
+
+    <bean id="myService" class="learn.springsecurity.service.MyService" />
+
+    <bean id="helloController" class="learn.springsecurity.controller.HelloController" />
+    <bean id="userController" class="learn.springsecurity.controller.UserController" />
+    <bean id="adminController" class="learn.springsecurity.controller.AdminController" />
+    <bean id="projectController" class="learn.springsecurity.controller.ProjectController" />
+
+</beans>

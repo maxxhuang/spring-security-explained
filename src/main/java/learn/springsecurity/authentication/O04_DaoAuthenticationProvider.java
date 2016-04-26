@@ -1,11 +1,13 @@
-package learn.springsecurity;
+package learn.springsecurity.authentication;
 
-import org.springframework.context.*;
-import org.springframework.context.support.*;
-import org.springframework.security.authentication.*;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.authentication.dao.AbstractUserDetailsAuthenticationProvider;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
-import org.springframework.security.core.*;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -48,7 +50,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
  *         &lt;/authentication-provider&gt;
  *     &lt;/authentication-manager&gt;
  * </pre>
- * <img src="doc-files/DaoAuthenticationProvider_and_UserDetailsService_impl.png" />
+ * <img src="doc-files/DaoAuthenticationProvider_and_UserDetailsService_impl.png" width="800" height="800" />
  * <p>
  */
 public class O04_DaoAuthenticationProvider {

@@ -1,18 +1,15 @@
-package learn.springsecurity;
+package learn.springsecurity.authentication;
 
-import org.springframework.context.*;
-import org.springframework.context.support.*;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.core.Authentication;
-import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.AuthenticationEntryPoint;
 import org.springframework.security.web.access.ExceptionTranslationFilter;
 import org.springframework.security.web.access.intercept.FilterSecurityInterceptor;
 import org.springframework.security.web.authentication.www.BasicAuthenticationEntryPoint;
 import org.springframework.security.web.authentication.www.BasicAuthenticationFilter;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import util.JettyServer;
 
 /**
  * For web applications running on Java EE servers, Spring Security provides a filter-based
@@ -101,9 +98,8 @@ import javax.servlet.http.HttpServletResponse;
 public class O06_Authentication_Flow_with_Spring_Security_Filter_Chain {
 
     public static void main(String[] args) {
-
-        ApplicationContext ac = new ClassPathXmlApplicationContext("classpath:spring/jetty.xml");
-
+        // import "auth-with-spring-security-filters.xml" in spring-security-web.xml
+        JettyServer.run();
     }
 
 }

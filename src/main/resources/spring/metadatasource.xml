@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:security="http://www.springframework.org/schema/security"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+    http://www.springframework.org/schema/security
+    http://www.springframework.org/schema/security/spring-security-4.0.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <import resource="inmemory-user-manager.xml" />
+
+    <context:annotation-config />
+
+    <security:http  pattern="/domain1/**" use-expressions="false">
+
+        <security:intercept-url pattern="/domain1/admin1/**" access="ROLE_ADMIN" />
+        <security:intercept-url pattern="/domain1/user1/**" access="ROLE_USER" />
+
+        <security:http-basic />
+
+    </security:http>
+
+    <security:http name="http2" pattern="/domain2/**"> <!-- use-expressions defaults to true -->
+
+        <security:intercept-url pattern="/domain2/admin2/**" access="hasRole('ROLE_ADMIN')" />
+        <security:intercept-url pattern="/domain2/user2/**" access="hasRole('ROLE_USER')" />
+
+        <security:http-basic />
+
+    </security:http>
+
+</beans>

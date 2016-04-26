@@ -95,7 +95,7 @@ import util.JettyServer;
  * as web descriptor.
  *
  */
-public class O06_Authentication_Flow_with_Spring_Security_Filter_Chain {
+public class O07_Authentication_Flow_with_Spring_Security_Filter_Chain {
 
     public static void main(String[] args) {
         // import "auth-with-spring-security-filters.xml" in spring-security-web.xml

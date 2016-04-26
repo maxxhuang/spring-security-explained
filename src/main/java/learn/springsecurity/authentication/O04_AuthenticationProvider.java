@@ -34,7 +34,7 @@ import java.util.Collections;
  * Some built-in implementations of AuthenticationProviders and the corresponding supported Authentications:<p>
  * <img src="doc-files/AuthenticationProvider_Impl.png" />
  */
-public class O03_AuthenticationProvider {
+public class O04_AuthenticationProvider {
 
     public static void main(String[] args) {
 

@@ -28,7 +28,7 @@ import static util.Utils.assume;
  * <p>
  * <img src="doc-files/AuthenticationManager.png" />
  */
-public class O01_AuthenticationManager {
+public class O02_AuthenticationManager {
 
     public static void main(String[] args) {
         // step1: gather request token from user

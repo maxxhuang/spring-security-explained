@@ -27,7 +27,7 @@ import java.util.Scanner;
  * <p>
  * Usually a security framework would provide a convenience means or components to cover these.
  */
-public class O05_Missing_Parts_of_Authentication_Flow {
+public class O06_Missing_Parts_of_Authentication_Flow {
 
     public static void main(String[] args) {
 

@@ -9,23 +9,24 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import static util.Utils.assume;
 
 /**
- * <h2>Authentication</h2>
+ * {@link Authentication} serves two purposes.
+ * <p>
  * Before authentication, it is the token for an authentication request.
  * After the request has been processed by the
- * {@link AuthenticationManager#authenticate(Authentication)},
- * it is an authenticated principal.
+ * {@link AuthenticationManager#authenticate(Authentication)}, it is an authenticated principal.
  * <p>
- * <h2>SecurityContext</h2>
- * Interface defining the minimum security information associated with the current thread
- * of execution.
+ * {@link SecurityContext} defines the minimum security information associated with the current thread
+ * of execution. It's a container holding Authentication.
  * <p>
- * <h2>SecurityContextHolder</h2>
- * Associates a given {@link SecurityContext} with the current execution thread.
+ * {@link SecurityContextHolder} associates a given {@link SecurityContext} with the current execution thread.
+ * <p>
+ * SecurityContext is usually obtained via SecurityContextHolder.
+ * <pre>SecurityContextHolder.getContext().getAuthentication(Authentication)</pre>
  * <p>
  * <img src="doc-files/Authentication_SecurityContext.png" width="700" height="550" />
  *
  */
-public class Authentication_and_SecurityContext {
+public class O01_Authentication_and_SecurityContext {
 
     public static void main(String[] args) {
 

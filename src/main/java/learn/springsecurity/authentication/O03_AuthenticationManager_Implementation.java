@@ -23,7 +23,7 @@ import static util.Utils.assume;
  * <img src="doc-files/AuthenticationManager_and_Impl.png" />
  *
  */
-public class O02_AuthenticationManager_Implementation {
+public class O03_AuthenticationManager_Implementation {
 
     public static void main(String[] args) {
 

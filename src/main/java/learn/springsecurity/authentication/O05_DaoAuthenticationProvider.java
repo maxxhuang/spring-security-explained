@@ -53,7 +53,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
  * <img src="doc-files/DaoAuthenticationProvider_and_UserDetailsService_impl.png" width="800" height="800" />
  * <p>
  */
-public class O04_DaoAuthenticationProvider {
+public class O05_DaoAuthenticationProvider {
 
     public static void main(String[] args) {
         ApplicationContext springContext = new ClassPathXmlApplicationContext("classpath:spring/inmemory-user-manager.xml");

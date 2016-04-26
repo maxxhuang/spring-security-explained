@@ -6,7 +6,7 @@
 
     <import resource="classpath:spring/inmemory-user-manager.xml" />
 
-    <bean id="authRunner" class="learn.springsecurity.authentication.O05_Missing_Parts_of_Authentication_Flow$AuthenticationRunner">
+    <bean id="authRunner" class="learn.springsecurity.authentication.O06_Missing_Parts_of_Authentication_Flow$AuthenticationRunner">
         <constructor-arg ref="authenticationManager" />
     </bean>
 

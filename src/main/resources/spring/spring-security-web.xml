@@ -10,8 +10,8 @@
                            http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
     <!-- import your spring security config file here -->
-    <!--<import resource="auth-with-spring-security-filters.xml" />-->
-    <import resource="authn-and-authz.xml" />
+    <import resource="auth-with-spring-security-filters.xml" />
+    <!--<import resource="authn-and-authz.xml" />-->
 
     <mvc:annotation-driven />
 

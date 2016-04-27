@@ -50,7 +50,7 @@ import java.util.List;
  * <p>
  * <img src="doc-files/AccessDecisionManager_and_Impl.png" />
  */
-public class O07_AccessDecisionManager_and_Implementation {
+public class O08_AccessDecisionManager_and_Implementation {
 
     public static void main(String[] args) {
 

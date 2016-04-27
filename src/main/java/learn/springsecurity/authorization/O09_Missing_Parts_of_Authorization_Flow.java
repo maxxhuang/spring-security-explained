@@ -24,7 +24,7 @@ import static util.Utils.assume;
  * Check out {@link AbstractSecurityInterceptor#beforeInvocation(Object)} to see what Spring Security does
  * for authorization.
  */
-public class O08_Missing_Parts_of_Authorization_Flow {
+public class O09_Missing_Parts_of_Authorization_Flow {
 
     public static void main(String[] args) {
 

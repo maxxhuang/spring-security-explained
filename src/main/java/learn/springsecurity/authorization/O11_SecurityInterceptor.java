@@ -19,7 +19,7 @@ import util.JettyServer;
  * <p>
  * <img src="doc-files/SecurityInterceptor.png" />
  */
-public class O10_SecurityInterceptor {
+public class O11_SecurityInterceptor {
 
     public static void main(String[] args) {
         // import "authn-and-authz.xml" in spring-security-web.xml

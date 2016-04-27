@@ -27,7 +27,7 @@ import java.util.stream.Collectors;
  *
  * <img src="doc-files/SecurityMetadataSource_and_Impl.png" />
  */
-public class O09_SecurityMetadataSource {
+public class O10_SecurityMetadataSource {
 
     public static void main(String[] args) {
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("spring/metadatasource.xml");

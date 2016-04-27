@@ -8,9 +8,10 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 
-import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
+
+import static util.Utils.assume;
 
 /**
  * As with AuthenticationManager to authentication flow, AccessDecisionManager alone is not able to
@@ -35,15 +36,17 @@ public class O08_Missing_Parts_of_Authorization_Flow {
         Authentication engineer = new UsernamePasswordAuthenticationToken("engineer1", "xxxxxx",
                 Collections.singleton(new SimpleGrantedAuthority("ROLE_ENGINEER")));
 
+        Object securedObject = assume("a secured object representing the operation of managing project");
+
         try {
-            authorizationRunner.canManageProject(manager, null);
+            authorizationRunner.doAuthz(manager, securedObject);
             System.out.println(manager.getName() + " can manager project");
         } catch (AccessDeniedException e) {
             System.out.println(manager.getName() + " is not allowed to manage project");
         }
 
         try {
-            authorizationRunner.canManageProject(engineer, null);
+            authorizationRunner.doAuthz(engineer, securedObject);
             System.out.println(engineer.getName() + " can manager project");
         } catch (AccessDeniedException  e) {
             System.out.println(engineer.getName() + " is not allowed to manager project");
@@ -68,12 +71,12 @@ public class O08_Missing_Parts_of_Authorization_Flow {
             this.accessDecisionManager = accessDecisionManager;
         }
 
-        public void canManageProject(Authentication user, Object securedObject) {
-            Collection<ConfigAttribute> requiredAuthorities = getConfigAttributeAssociatedWithManagingProject(securedObject);
+        public void doAuthz(Authentication user, Object securedObject) {
+            Collection<ConfigAttribute> requiredAuthorities = getConfigAttributes(securedObject);
             this.accessDecisionManager.decide(user, securedObject, requiredAuthorities);
         }
 
-        public Collection<ConfigAttribute> getConfigAttributeAssociatedWithManagingProject(Object securedObject) {
+        public Collection<ConfigAttribute> getConfigAttributes(Object securedObject) {
             return Collections.singleton(new SecurityConfig("ROLE_MANAGER"));
         }
     }

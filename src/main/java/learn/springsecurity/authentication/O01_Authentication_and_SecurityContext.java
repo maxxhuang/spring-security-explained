@@ -1,4 +1,4 @@
-package Chapter01_Architecture;
+package learn.springsecurity.authentication;
 
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;

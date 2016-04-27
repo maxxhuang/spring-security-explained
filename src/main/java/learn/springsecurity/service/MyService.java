@@ -15,5 +15,4 @@ public class MyService {
         return 1000000;
     }
 
-    public void triggerInit() {}
 }

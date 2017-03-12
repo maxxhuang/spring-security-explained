@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/maxxhuang/spring-security-explained.svg?branch=master)](https://travis-ci.org/maxxhuang/spring-security-explained)
+
 # spring-security-explained
 A live tutorial explaining the basic architecture of Spring Security.
 

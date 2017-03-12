@@ -20,7 +20,7 @@ in the authentication and authorization flow.
 
 ## How it works
 
-The tutorial is embedded in Java classes as JavaDoc. Choose any tool you prefer as long as it can properly display JavaDoc.
+The tutorial is embedded in Java classes as JavaDoc. Choose any tool you prefer that can properly display JavaDoc to read the tutorial.
 
 ### Read the tutorial in IDE
 

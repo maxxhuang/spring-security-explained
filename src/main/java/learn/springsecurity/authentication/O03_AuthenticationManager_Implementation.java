@@ -20,7 +20,7 @@ import static util.Utils.assume;
  * As such, AuthenticationProvider has the same method signature as AuthenticationManager:
  * {@link AuthenticationProvider#authenticate(Authentication)}
  * <p>
- * <img src="doc-files/AuthenticationManager_and_Impl.png" />
+ * <img src="doc-files/AuthenticationManager_and_Impl.png" alt="ProviderManager Class Diagram">
  *
  */
 public class O03_AuthenticationManager_Implementation {

@@ -23,7 +23,7 @@ import static util.Utils.assume;
  * SecurityContext is usually obtained via SecurityContextHolder.
  * <pre>SecurityContextHolder.getContext().getAuthentication(Authentication)</pre>
  * <p>
- * <img src="doc-files/Authentication_SecurityContext.png" width="700" height="550" />
+ * <img src="doc-files/Authentication_SecurityContext.png" width="700" height="550" alt="SecurityContext Class Diagram">
  *
  */
 public class O01_Authentication_and_SecurityContext {

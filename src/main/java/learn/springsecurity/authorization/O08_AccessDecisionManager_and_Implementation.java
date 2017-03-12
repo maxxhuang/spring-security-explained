@@ -48,7 +48,7 @@ import java.util.List;
  * http://docs.spring.io/autorepo/docs/spring-security/4.1.0.RC1/reference/htmlsingle/#authz-arch
  * for more detailed explanation.
  * <p>
- * <img src="doc-files/AccessDecisionManager_and_Impl.png" />
+ * <img src="doc-files/AccessDecisionManager_and_Impl.png" width="850" height="650" alt="AccessDecisionManager Class Diagram">
  */
 public class O08_AccessDecisionManager_and_Implementation {
 

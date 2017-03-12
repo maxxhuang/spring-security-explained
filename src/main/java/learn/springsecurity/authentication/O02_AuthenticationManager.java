@@ -26,7 +26,7 @@ import static util.Utils.assume;
  * <p>
  * An authentication flow can be roughly divided into 3 steps as shown in the following pseudo code.
  * <p>
- * <img src="doc-files/AuthenticationManager.png" />
+ * <img src="doc-files/AuthenticationManager.png" alt="AuthenticationManager Class Diagram">
  */
 public class O02_AuthenticationManager {
 

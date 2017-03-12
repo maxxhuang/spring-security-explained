@@ -25,7 +25,7 @@ import java.util.stream.Collectors;
  * configuration of authorization.
  * <p>
  *
- * <img src="doc-files/SecurityMetadataSource_and_Impl.png" />
+ * <img src="doc-files/SecurityMetadataSource_and_Impl.png" width="850" height="650" alt="SecurityMetadataSource Class Diagram">
  */
 public class O10_SecurityMetadataSource {
 

@@ -17,7 +17,8 @@ import util.JettyServer;
  * For method-based implementation, {@link MethodSecurityInterceptor}, {@link AspectJMethodSecurityInterceptor},
  * they are {@link MethodInvocation} and {@link JoinPoint} respectively.
  * <p>
- * <img src="doc-files/SecurityInterceptor.png" />
+ * <img src="doc-files/SecurityInterceptor.png" alt="SecurityInterceptor">
+ * (source:
  */
 public class O11_SecurityInterceptor {
 

@@ -50,8 +50,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
  *         &lt;/authentication-provider&gt;
  *     &lt;/authentication-manager&gt;
  * </pre>
- * <img src="doc-files/DaoAuthenticationProvider_and_UserDetailsService_impl.png" width="800" height="800" />
- * <p>
+ *
+ * <img src="doc-files/DaoAuthenticationProvider_and_UserDetailsService_impl.png" width="800" height="800" alt="DaoAuthenticationProvider Class Diagram">
  */
 public class O05_DaoAuthenticationProvider {
 

@@ -15,7 +15,7 @@ import util.JettyServer;
  * For web applications running on Java EE servers, Spring Security provides a filter-based
  * mechanism called Security Filter Chain to facilitate authentication and authorization.
  * <p>
- * Security Filter Chain provides common authentication & authorization methods that
+ * Security Filter Chain provides common authentication and authorization methods that
  * can works out of the box with just a few settings.
  * <p>
  * As Security Filter Chain is a composite of many filter and other components. It is practically
